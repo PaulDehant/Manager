@@ -40,22 +40,7 @@ public class ManagerForAfishaTest {
         afisha.addMovie("movie4");
 
 
-        String[] expected = {"movie1", "movie2", "movie3", "movie4"};
-        String[] actual = afisha.findAll();
-        Assertions.assertArrayEquals(expected, actual);
-}
-
-    @Test
-    public void testEqualslimit() {
-        ManagerForAfisha afisha = new ManagerForAfisha(5);
-        afisha.addMovie("movie1");
-        afisha.addMovie("movie2");
-        afisha.addMovie("movie3");
-        afisha.addMovie("movie4");
-        afisha.addMovie("movie5");
-
-
-        String[] expected = {"movie1", "movie2", "movie3", "movie4","movie5"};
+        String[] expected = {"movie4", "movie3", "movie2", "movie1"};
         String[] actual = afisha.findAll();
         Assertions.assertArrayEquals(expected, actual);
     }
@@ -71,8 +56,8 @@ public class ManagerForAfishaTest {
         afisha.findMovieLimit("movie5");
         afisha.findMovieLimit("movie6");
 
-        String[] expected = {"movie1", "movie2", "movie3", "movie4","movie5"};
-        String[] actual = afisha.findAll();
+        String[] expected = {"movie6", "movie5", "movie4", "movie3", "movie2"};
+        String[] actual = afisha.findLast();
         Assertions.assertArrayEquals(expected, actual);
-}
+    }
 }
